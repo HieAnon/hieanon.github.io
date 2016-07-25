@@ -1,6 +1,47 @@
 body {
-background-color:gainsboro;
+background-color: lightgray;
 }
+
+/* These blocks style the navigation bar */
+
+nav {
+float:left;
+width: 15%;
+height: 100%;
+margin-right:2%
+}
+
+nav ul {
+list-style-type:none;
+margin:0;
+padding:0;
+background-color: #f1f1f1;
+/* border-style: solid;
+border width: thin;
+border-color: black; */
+}
+
+
+nav li {
+display:block;
+padding: 8px 16px;
+text-decoration: none;
+text-align:right;
+}
+
+nav li a {
+display:block;
+text-decoration: none;
+text-align:right;
+}
+
+/* change link color on hover */
+nav a:hover {
+color: white;
+background-color: #555
+}
+
+
 
 h1 {
 color:darkslateblue;
