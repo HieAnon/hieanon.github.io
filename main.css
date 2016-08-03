@@ -54,9 +54,10 @@ background-color: #555
 
 
 /* These blocks style the content */
-section {
+article {
 position:relative;
 left:200px;
+right:200px;
 }
 
 h1 {
@@ -65,9 +66,17 @@ font-family: 'Rambla', sans-serif;
 font-size: 2.5em;
 text-align:center;
 margin-top: 0;
-
-
 }
+
+h2 {
+  text-align:center;
+}
+
+h3 {
+  text-align:left;
+  color:darkslategray;
+}
+
 
 p {
 color:black;
