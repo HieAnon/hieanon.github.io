@@ -14,18 +14,30 @@ y= 980px --Wider than this and the main two-column layout works fine.
 For now, let's focus on getting to a one-column layout under 980px.
 */
 
+/* fonts to consider (Google Fonts)
 
-/* This block styles the main page for 980px and wider */
+--Roboto Slab
+--indie flower (display--navbar?)
+--Dosis
+--Quicksand
+--scope one
+
+/* WIDE-SIZE
+
+
+This block styles the main page for 980px and wider */
 
 @media (min-width: 980px) {
     body {
-        background-color: #d3d3d3;
+        background-color:white;
         margin: 0;
         padding: 0;
     }
     div#pagewrap {
         width: 980px;
     }
+
+
     /* These blocks style the navigation bar */
     nav {
         position: fixed;
@@ -34,7 +46,7 @@ For now, let's focus on getting to a one-column layout under 980px.
         height: 100%;
         margin-right: 2%;
         border-right: 3px solid black;
-        background-color: #f1f1f1;
+        background-color: #83BE46;
         display: block;
     }
     nav img {
@@ -52,19 +64,21 @@ For now, let's focus on getting to a one-column layout under 980px.
         padding: 8px;
         text-decoration: none;
         text-align: right;
-        font-family: 'Rambla', sans-serif;
+        font-family: 'Dosis', serif;
+        font-weight:bold;
         font-size: 1.5em;
-        color: #555;
+        color: #A32528;
     }
     nav li a {
         display: block;
         padding: 8px 16px;
         text-decoration: none;
         text-align: right;
+        color: #555;
     }
     nav a:hover {
         /* change link color on hover */
-        color: #f1f1f1;
+        color: #83BE46;
         background-color: #555
     }
     /* These blocks style the content */
@@ -73,32 +87,55 @@ For now, let's focus on getting to a one-column layout under 980px.
         margin: 0px 200px;
         width: 780px;
     }
+
+    h1, h2, h3, h4, h5, h6, p {
+        color: #666666;
+    }
+
     h1 {
-        color: darkslateblue;
-        font-family: 'Rambla', sans-serif;
+        /* border-left: 3px solid #A32528;*/
+        font-family: 'cinzel', sans-serif;
         font-size: 2.5em;
         text-align: center;
         margin-top: 0;
     }
     h2 {
         text-align: center;
+        font-family: 'Rambla', sans-serif;
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 0;
     }
     h3 {
         text-align: left;
-        color: darkslategray;
+        border-left: 3px solid #A32528;
+        padding: 5px;
     }
     p {
-        color: black;
         font-size: 1.5em;
         font-family: "Rambla", sans-serif
     }
+    main li {
+      color:#666666;
+    }
 }
 
+footer {
+    position: relative;
+    margin: 0px 200px;
+    width: 780px;
+}
+
+footer p {
+    color: #666666;
+    font-size: 1em;
+    font-family: "Dosis", sans-serif;
+}
 /* The code below styles content for narrower screens */
 
 @media (max-width: 979px) {
   body {
-      background-color: #d3d3d3;
+      background-color: white;
       margin: 0;
       padding: 0;
   }
@@ -110,12 +147,12 @@ For now, let's focus on getting to a one-column layout under 980px.
   nav {
       height: 100%;
       margin: 2%;
-      background-color: #d3d3d3;
+      background-color: white;
       display: block;
   }
   nav img {
       display: block;
-      background-color: #d3d3d3;
+      background-color: white;
       margin: auto;
       width: 300px;
   }
@@ -124,7 +161,7 @@ For now, let's focus on getting to a one-column layout under 980px.
       margin: auto;
       padding: 0;
       width: 300px;
-      background-color: #f1f1f1
+      background-color: white;
   }
   nav li {
       display: inline-block;
@@ -132,10 +169,11 @@ For now, let's focus on getting to a one-column layout under 980px.
       margin:0;
       text-decoration: none;
       text-align: right;
-      font-family: 'Rambla', sans-serif;
+      font-family: 'Cinzel', sans-serif;
+      font-weight: bold;
       font-size: 1.25em;
       color: #555;
-      background-color: #f1f1f1
+      background-color: white;
   }
   nav li a {
       text-decoration: none;
@@ -144,7 +182,7 @@ For now, let's focus on getting to a one-column layout under 980px.
   }
   nav a:hover {
       /* change link color on hover */
-      color: #f1f1f1;
+      color: #A32528;
       background-color: #555;
       padding: 5px;
   }
