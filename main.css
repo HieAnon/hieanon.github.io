@@ -106,6 +106,15 @@ This block styles the main page for 980px and wider */
         text-align: center;
         margin-top: 0;
     }
+
+    label {
+        text-align: left;
+        display:block;
+        font-family: 'Rambla', sans-serif;
+        color:slateblue;
+        font-size: 2.5em;
+        margin-top: 0;
+    }
     h3 {
         text-align: left;
         border-left: 3px solid #A32528;
@@ -119,6 +128,29 @@ This block styles the main page for 980px and wider */
       color:#666666;
     }
 }
+
+.content-trigger{
+  max-height: 0;
+  overflow:hidden;
+  transition: max-height .25s;
+}
+
+.trigger-checkbox:checked ~ .content-trigger {
+  max-height: 3000px;
+  transition: max-height 1s;
+}
+
+.trigger-checkbox:checked ~ label {
+  text-align:center;
+  transition: text-align 2s;
+}
+/* Add transitions so the headers slide out */
+
+
+.trigger-checkbox{
+  display:none;
+}
+
 
 footer {
     position: relative;
