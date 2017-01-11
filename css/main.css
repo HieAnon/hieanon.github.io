@@ -1,5 +1,5 @@
 /*styles the defaults */
-nav {
+header {
   /*position: fixed;*/
   float: left;
   width: 100%;
@@ -8,17 +8,23 @@ nav {
   border-right: 3px solid black;
   background-color: #83BE46;
   display: block; }
-  nav img {
+  header img {
+    display: inline;
+    margin: auto;
+    max-width: auto;
+    height: 100px;
+    float: left; }
+  header h1 {
     display: inline;
     margin: auto;
     max-width: auto;
     height: 100px; }
-  nav ul {
+  header nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 30px;
-    display: inline; }
-  nav li {
+    margin: auto;
+    padding: 10px;
+    display: block; }
+  header nav li {
     display: inline;
     padding: 8px;
     text-decoration: none;
@@ -27,12 +33,11 @@ nav {
     font-weight: bold;
     font-size: 1.5em;
     color: #A32528; }
-    nav li a {
-      padding: 8px 16px;
+    header nav li a {
       text-decoration: none;
       text-align: right;
       color: #555; }
-      nav li a:hover {
+      header nav li a:hover {
         /*change link color on hover */
         color: #83BE46;
         background-color: #555; }

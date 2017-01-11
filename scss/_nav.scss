@@ -1,4 +1,4 @@
-nav {
+header {
     /*position: fixed;*/
     float: left;
     width: 100%;
@@ -12,32 +12,40 @@ nav {
       margin: auto;
       max-width: auto;
       height:100px;
+      float: left;
     }
-    ul{
-      list-style-type: none;
-      margin: 0;
-      padding: 30px;
-      display:inline;
-    }
-    li {
+    h1{
       display: inline;
-      padding: 8px;
-      text-decoration: none;
-      text-align: right;
-      font-family: $nav-font;
-      font-weight:bold;
-      font-size: 1.5em;
-      color: #A32528;
-      a {
-        padding: 8px 16px;
+      margin: auto;
+      max-width: auto;
+      height:100px;
+    }
+    nav {
+      ul{
+        list-style-type: none;
+        margin: auto;
+        padding: 10px;
+        display: block;
+      }
+      li {
+        display: inline;
+        padding: 8px;
         text-decoration: none;
         text-align: right;
-        color: #555;
-        &:hover {
-          /*change link color on hover */
-          color: #83BE46;
-          background-color: #555
+        font-family: $nav-font;
+        font-weight:bold;
+        font-size: 1.5em;
+        color: #A32528;
+        a {
+          text-decoration: none;
+          text-align: right;
+          color: #555;
+          &:hover {
+            /*change link color on hover */
+            color: #83BE46;
+            background-color: #555;
+          }
         }
       }
-    }
+  }
 }
