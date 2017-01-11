@@ -15,7 +15,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><strong>Curriculum Vitae</strong></li>
+            <li><strong>CV</strong></li>
             <li><a href="projects.html">Projects</a></li>
         </ul>
     </nav>
@@ -23,8 +23,7 @@
     <!---
 CV Content copied over from the CV created 20160509, then edited for the web.
 
-TODO: Collapsable headers; jquery?
-      Highlight invited/reviewed scholarship; on hover? with filters?
+TODO:      Highlight invited/reviewed scholarship; on hover? with filters?
   -->
     <main>
         <article>
@@ -33,9 +32,9 @@ TODO: Collapsable headers; jquery?
             <section id="areasOfExpertise">
                 <!--<h2 class="section-header">Areas of Expertise</h2> -->
 
-                <input type="checkbox" value="value-1" class="trigger-checkbox" id="expertise-trigger" name="expertise-trigger">
+                <input type="checkbox" class="trigger-checkbox" id="expertise-trigger">
                 <label for="expertise-trigger">Areas of Expertise</label>
-                
+
                 <div class="content-trigger">
                     <h3>Data Education &amp; Instruction</h3>
                     <ul>
@@ -104,7 +103,7 @@ TODO: Collapsable headers; jquery?
             <section id="workHistory">
                 <!-- <h2 class="section-header">Work History</h2> -->
 
-                <input type="checkbox" value="value-1" class="trigger-checkbox" id="work-trigger" name="work-trigger">
+                <input type="checkbox" class="trigger-checkbox" id="work-trigger">
                 <label for="work-trigger">Work History</label>
 
                 <div class="content-trigger">
@@ -200,7 +199,11 @@ TODO: Collapsable headers; jquery?
                 </div>
             </section>
             <section id="scholarship">
-                <h2 class="section-header">Scholarship</h2>
+                <!-- <h2 class="section-header">Scholarship</h2> -->
+                <input type="checkbox" class="trigger-checkbox" id="scholarship-trigger">
+                <label for="scholarship-trigger">Scholarship</label>
+
+                <div class="content-trigger">
                 <h3>Monographs</h3>
                 <ul>
                     <li>The Hack Library School Team (2013). "<a href="http://hacklibraryschool.com/about/ebook/">The HLS Guide to Library School.</a>" </li>
@@ -256,10 +259,13 @@ TODO: Collapsable headers; jquery?
                     <li>Smith, M., Lawton, C., Edwards-Bodmer, W., Litherland, L., Brewer, A., Justice, N. "ODU Libraries' Sharepoint training." June 2014. Workshops. </li>
                     <li>Lawton, Christopher, R. David Lankes, Barbara Stripling, Renee Franklin, and Scott Nicholson. "ALA Annual Trendspotting." 28 June 2012. Webinar.</li>
                 </ul>
-
+              </div>
             </section>
             <section>
-                <h2 class="section-header">Service</h2>
+                <!-- <h2 class="section-header">Service</h2> -->
+                <input type="checkbox" class="trigger-checkbox" id="service-trigger">
+                <label for="service-trigger">Service</label>
+                <div class="content-trigger">
                 <h3>National</h3>
                 <ul>
                     <li>ALA-LITA: Director-At-Large, 2016-2019</li>
@@ -309,15 +315,18 @@ TODO: Collapsable headers; jquery?
                     </ul>
                 </ul>
 
-            </section>
-            <section>
-                <h2>Outreach Work</h2>
+                <h3>Local</h3>
                 <ul>
                     <li>Built LibraryBox for Tully Free Library, Tully, NY. (2013)</li>
                     <li>Taught basic musical concepts as guest lecturer in the Community Folk Music Class, Schodack, NY. (2011-2014)</li>
                 </ul>
-
-                <h2>Professional Affiliations</h2>
+              </div>
+            </section>
+<section>
+                <!-- <h2>Professional Affiliations</h2> -->
+                <input type="checkbox" class="trigger-checkbox" id="affiliations-trigger">
+                <label for="affiliations-trigger">Professional Affiliations</label>
+                <div class="content-trigger"
                 <ul>
                     <li>Library Information Technology Association (2013-Present)</li>
                     <li>American Library Association (2012-Present)</li>
@@ -330,5 +339,4 @@ TODO: Collapsable headers; jquery?
             </section>
         </article>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>

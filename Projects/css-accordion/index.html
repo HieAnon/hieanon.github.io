@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="accordionfromscss.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Dosis|Rambla" rel="stylesheet">
+    <title>
+        CSS-only accordions
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+<input type="checkbox" class="trigger-checkbox" id="accordion-trigger">
+<!--This line creates a checkbox. When checked, we'll show the accordion content, when unchecked, we'll hide it.-->
+
+<label for="accordion-trigger">This is a header/accordion button</label>
+<!-- the "for" clause here links this label to the matching id in the input tag, so a click will check the box
+Then, we can hide the box, and style the label however we might choose. -->
+
+<div class="accordion-content">
+<!--We need a block to show or hide,and a div is the easiest way to create that.-->
+
+  <p> This is some content that we want to show or hide on click.</p>
+  <!-- -->
+
+</div>
+
+</body>
+
+</html>

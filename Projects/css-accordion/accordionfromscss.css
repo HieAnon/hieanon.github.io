@@ -1,0 +1,27 @@
+label {
+  text-align: left;
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  color: slateblue;
+  font-size: 2.5em;
+  margin-top: 0; }
+  @media (min-width: 980px) {
+    label {
+      color: grey; } }
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease; }
+
+.trigger-checkbox {
+  display: none; }
+  .trigger-checkbox:checked ~ .accordion-content {
+    max-height: 3000px;
+    transition: max-height 1s linear; }
+  .trigger-checkbox:checked ~ label {
+    text-align: center; }
+
+/* Add transitions so the headers slide out */
+
+/*# sourceMappingURL=accordionfromscss.css.map */
