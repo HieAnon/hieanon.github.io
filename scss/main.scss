@@ -1,5 +1,5 @@
-@import "settings";
-@import "nav";
+@import "settings"; /*styles the defaults */
+@import "nav"; /*styles the navigation bar*/
 
 
 /*
@@ -33,32 +33,32 @@ This block styles the main page for 980px and wider */
 
 @media (min-width: 980px) {
     body {
-        background-color:white;
         margin: 0;
         padding: 0;
-        max-width: 980px;
+        /* background-color: #424242; */
     }
-    div#pagewrap {
-        width: 980px;
-    }
-
-
-    /* These blocks style the navigation bar */
-
-
-    /* These blocks style the content */
+    /* See _Nav for header styling */
+    /* These blocks style the content*/
     main {
-        position: relative;
-        margin: 0px 200px;
-        width: 780px;
+        display:block;
+        background-color: #fff;
+        width: 740px;
+        margin: 0px auto;
+    }
+
+    section .main-content {
+        width: 520px;
+        margin: 20px 0;
+        padding: 0;
+        float: left;
     }
 
     h1, h2, h3, h4, h5, h6, p {
         color: #666666;
     }
-
-    h1 {
-        /* border-left: 3px solid #A32528;*/
+}
+   h1 {
+        /* border-left: 3px solid #A32528; */
         font-family: $display-font;
         font-size: 2.5em;
         text-align: center;
@@ -92,7 +92,6 @@ This block styles the main page for 980px and wider */
     main li {
       color:#666666;
     }
-}
 
 .content-trigger{
   max-height: 0;
@@ -128,7 +127,7 @@ footer p {
     font-size: 1em;
     font-family: "Dosis", sans-serif;
 }
-/* The code below styles content for narrower screens */
+/* The code below styles content for narrower screens*/
 
 @media (max-width: 979px) {
   body {
@@ -140,7 +139,7 @@ footer p {
       width: 94%;
       margin: 3%;
   }
-  /* These blocks style the navigation bar */
+  /* These blocks style the navigation bar*/
   nav {
       height: 100%;
       margin: 2%;
@@ -178,12 +177,12 @@ footer p {
       padding: 5px;
   }
   nav a:hover {
-      /* change link color on hover */
+      /* change link color on hover*/
       color: #A32528;
       background-color: #555;
       padding: 5px;
   }
-  /* These blocks style the content */
+  /* These blocks style the content*/
   main {
       position: relative;
       margin: 10px;
