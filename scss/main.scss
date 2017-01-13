@@ -1,8 +1,18 @@
 @import "settings"; /*styles the defaults */
-@import "nav"; /*styles the navigation bar*/
-
+@import "header"; /*styles the navigation bar*/
+@import "footer"; /*Styles the footer*/
 
 /*
+Primary colors used are:
+#924343
+#6b4392
+#6a9243
+#439292
+
+#dfdbd6
+#2a3130
+
+
 Media Queries: Will have two breakpoints, focused on screen width. These breakpoints, X and Y, divide the audience into three categories:
 Narrower than X (Smartphones),
 Between X and Y (Tablets), and
@@ -76,13 +86,13 @@ This block styles the main page for 980px and wider */
         text-align: left;
         display:block;
         font-family: $body-fonts;
-        color:slateblue;
+        color:#2a3130;
         font-size: 2.5em;
         margin-top: 0;
     }
     h3 {
         text-align: left;
-        border-left: 3px solid #A32528;
+        border-left: 3px solid #924343;
         padding: 5px;
     }
     p {
@@ -116,17 +126,6 @@ This block styles the main page for 980px and wider */
 }
 
 
-footer {
-    position: relative;
-    margin: 0px 200px;
-    width: 780px;
-}
-
-footer p {
-    color: #666666;
-    font-size: 1em;
-    font-family: "Dosis", sans-serif;
-}
 /* The code below styles content for narrower screens*/
 
 @media (max-width: 979px) {
