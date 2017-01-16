@@ -1,49 +1,60 @@
 header {
-    /*position: fixed;*/
     float: left;
     width: 100%;
-    height: 100px;
     margin-right: 2%;
-
     background-color:#439292;
-    img {
-      display: inline;
-      margin: auto;
-      max-width: auto;
-      height:100px;
-      float: left;
-    }
-    p.title {
-      display: block;
-      margin: 10px auto;
-      max-width: auto;
-      color: #dfdbd6;
-    }
-    nav {
-      ul{
-        list-style-type: none;
-        margin: auto;
-        padding: 10px;
-        display: block;
-      }
-      li {
+      img {
+        @media ($large-breakpoint) {
         display: inline;
-        padding: 8px;
-        text-decoration: none;
-        text-align: right;
-        font-family: $nav-font;
-        font-weight:bold;
+        margin: auto;
+        max-width: auto;
+        height:100px;
+        float: left;
+        }
+        @media ($small-breakpoint) {
+          margin: auto;
+          width: 100%;
+          }
+        }
+      p.title {
+        display: block;
+        margin: 10px auto;
+        max-width: auto;
+        color: #dfdbd6;
+        font-family: $display-font;
         font-size: 1.5em;
-        color: #2a3130;
-        a {
+        @media ($large-breakpoint) {
+          text-align: left;
+        }
+        @media ($small-breakpoint) {
+          text-align: center;
+        }
+        }
+      nav {
+        ul{
+          list-style-type: none;
+          margin: auto;
+          padding: 10px;
+          display: block;
+        }
+        li {
+          display: inline;
+          padding: 8px;
           text-decoration: none;
           text-align: right;
-          color: #dfdbd6;
-          &:hover {
-            /*change link color on hover */
-            background-color: #2a3130;
+          font-family: $nav-font;
+          font-weight:bold;
+          font-size: 1.5em;
+          color: #2a3130;
+          a {
+            text-decoration: none;
+            text-align: right;
+            color: #dfdbd6;
+            &:hover {
+              /*change link color on hover */
+              background-color: #2a3130;
+            }
           }
         }
       }
-  }
 }

@@ -1,22 +1,33 @@
 /*styles the defaults */
 header {
-  /*position: fixed;*/
   float: left;
   width: 100%;
-  height: 100px;
   margin-right: 2%;
   background-color: #439292; }
-  header img {
-    display: inline;
-    margin: auto;
-    max-width: auto;
-    height: 100px;
-    float: left; }
+  @media (min-width: 760px) {
+    header img {
+      display: inline;
+      margin: auto;
+      max-width: auto;
+      height: 100px;
+      float: left; } }
+  @media (max-width: 759px) {
+    header img {
+      margin: auto;
+      width: 100%; } }
   header p.title {
     display: block;
     margin: 10px auto;
     max-width: auto;
-    color: #dfdbd6; }
+    color: #dfdbd6;
+    font-family: "Cinzel", sans-serif;
+    font-size: 1.5em; }
+    @media (min-width: 760px) {
+      header p.title {
+        text-align: left; } }
+    @media (max-width: 759px) {
+      header p.title {
+        text-align: center; } }
   header nav ul {
     list-style-type: none;
     margin: auto;
@@ -42,13 +53,13 @@ header {
 /*styles the navigation bar*/
 footer {
   width: 100%;
-  height: 30px;
   background-color: #439292;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem; }
+  padding: 10px;
+  box-sizing: border-box; }
   footer p {
     display: block;
     margin: 10px auto;
@@ -64,17 +75,13 @@ Primary colors used are:
 #6b4392
 #6a9243
 #439292
-
 #dfdbd6
 #2a3130
 
 
-Media Queries: Will have two breakpoints, focused on screen width. These breakpoints, X and Y, divide the audience into three categories:
-Narrower than X (Smartphones),
+Media Queries: Current Breakpoint
 Between X and Y (Tablets), and
 Wider than Y (Most computers).
-
-Generally speaking, it's all about consuming content--at what sizes do we need to redesign our sites to make content easy?
 
 
 To take a stab in the dark,
@@ -94,156 +101,129 @@ For now, let's focus on getting to a one-column layout under 980px.
 /* WIDE-SIZE
 
 
-This block styles the main page for 980px and wider */
-@media (min-width: 980px) {
-  body {
-    margin: 0;
-    padding: 0;
-    /* background-color: #424242; */ }
-
+This block styles the main page for wide screens */
+body {
   /* See _Nav for header styling */
   /* These blocks style the content*/
-  main {
-    display: block;
-    background-color: #fff;
-    width: 740px;
-    margin: 0px auto; }
-
-  section .main-content {
-    width: 520px;
-    margin: 20px 0;
+  /*This block triggers the menu dropdowns in the CV*/ }
+  @media (min-width: 760px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+  @media (max-width: 759px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+  @media (min-width: 760px) {
+    body main {
+      display: block;
+      background-color: #fff;
+      width: 80%;
+      margin: 0px auto; } }
+  @media (max-width: 759px) {
+    body main {
+      display: block;
+      background-color: #fff;
+      width: 90%;
+      margin: 0px auto; } }
+  body main .main-content {
+    margin: 0;
     padding: 0;
-    float: left; }
-
-  h1, h2, h3, h4, h5, h6, p {
-    color: #666666; } }
-h1 {
-  /* border-left: 3px solid #A32528; */
-  font-family: "Cinzel", sans-serif;
-  font-size: 2.5em;
-  text-align: center;
-  margin-top: 0; }
-
-h2 {
-  text-align: center;
-  font-family: "Rambla", sans-serif;
-  font-size: 2.5em;
-  text-align: center;
-  margin-top: 0; }
-
-label {
-  text-align: left;
-  display: block;
-  font-family: "Rambla", sans-serif;
-  color: #2a3130;
-  font-size: 2.5em;
-  margin-top: 0; }
-
-h3 {
-  text-align: left;
-  border-left: 3px solid #924343;
-  padding: 5px; }
-
-p {
-  font-size: 1.5em;
-  font-family: "Rambla", sans-serif; }
-
-main li {
-  color: #666666; }
-
-.content-trigger {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .25s; }
-
-.trigger-checkbox:checked ~ .content-trigger {
-  max-height: 3000px;
-  transition: max-height 1s; }
-
-.trigger-checkbox:checked ~ label {
-  text-align: center;
-  transition: text-align 2s; }
+    color: #666; }
+    body main .main-content h1 {
+      font-family: "Cinzel", sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0; }
+    body main .main-content h2 {
+      text-align: center;
+      font-family: "Rambla", sans-serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0; }
+    body main .main-content h3 {
+      text-align: left;
+      border-left: 3px solid #924343;
+      padding: 5px; }
+    body main .main-content p {
+      font-size: 1.5em;
+      font-family: "Rambla", sans-serif; }
+  body label {
+    text-align: left;
+    display: block;
+    font-family: "Rambla", sans-serif;
+    color: #2a3130;
+    font-size: 2.5em;
+    margin-top: 0; }
+  body .content-trigger {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s; }
+  body .trigger-checkbox {
+    display: none; }
+    body .trigger-checkbox:checked ~ .content-trigger {
+      max-height: 3000px;
+      transition: max-height 1s; }
+    body .trigger-checkbox:checked ~ label {
+      text-align: center;
+      transition: text-align 2s; }
 
 /* Add transitions so the headers slide out */
-.trigger-checkbox {
-  display: none; }
-
+/*  .sidebar */
 /* The code below styles content for narrower screens*/
-@media (max-width: 979px) {
-  body {
-    background-color: white;
-    margin: 0;
-    padding: 0; }
-
-  div#pagewrap {
-    width: 94%;
-    margin: 3%; }
-
-  /* These blocks style the navigation bar*/
-  nav {
-    height: 100%;
-    margin: 2%;
-    background-color: white;
-    display: block; }
-
-  nav img {
-    display: block;
-    background-color: white;
-    margin: auto;
-    width: 300px; }
-
+/*
+@media (max-width: 759px) {
   nav ul {
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-    width: 300px;
-    background-color: white; }
-
+      list-style-type: none;
+      margin: auto;
+      padding: 0;
+      width: 300px;
+      background-color: white;
+  }
   nav li {
-    display: inline-block;
-    padding: 5px;
-    margin: 0;
-    text-decoration: none;
-    text-align: right;
-    font-family: "Cinzel", sans-serif;
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #555;
-    background-color: white; }
-
+      display: inline-block;
+      padding: 5px;
+      margin:0;
+      text-decoration: none;
+      text-align: right;
+      font-family: $display-font;
+      font-weight: bold;
+      font-size: 1.25em;
+      color: #555;
+      background-color: white;
+  }
   nav li a {
-    text-decoration: none;
-    text-align: right;
-    padding: 5px; }
-
+      text-decoration: none;
+      text-align: right;
+      padding: 5px;
+  }
   nav a:hover {
-    /* change link color on hover*/
-    color: #A32528;
+      /* change link color on hover*/
+  /*  color: #A32528;
     background-color: #555;
-    padding: 5px; }
-
-  /* These blocks style the content*/
-  main {
-    position: relative;
-    margin: 10px; }
-
-  h1 {
-    color: red;
-    font-family: "Rambla", sans-serif;
-    font-size: 2.5em;
-    text-align: center;
-    margin-top: 0; }
-
+    padding: 5px;
+}
+/* These blocks style the content*/
+/*  h1 {
+      color: red;
+      font-family: $body-fonts;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0;
+  }
   h2 {
-    text-align: center; }
-
+      text-align: center;
+  }
   h3 {
-    text-align: left;
-    color: darkslategray; }
-
+      text-align: left;
+      color: darkslategray;
+  }
   p {
-    color: black;
-    font-size: 1.5em;
-    font-family: "Rambla", sans-serif; } }
+      color: black;
+      font-size: 1.5em;
+      font-family: $body-fonts;
+  }
+}
+*/
 
 /*# sourceMappingURL=main.css.map */

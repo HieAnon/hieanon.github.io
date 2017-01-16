@@ -2,23 +2,21 @@
 @import "header"; /*styles the navigation bar*/
 @import "footer"; /*Styles the footer*/
 
+
+
 /*
 Primary colors used are:
 #924343
 #6b4392
 #6a9243
 #439292
-
 #dfdbd6
 #2a3130
 
 
-Media Queries: Will have two breakpoints, focused on screen width. These breakpoints, X and Y, divide the audience into three categories:
-Narrower than X (Smartphones),
+Media Queries: Current Breakpoint
 Between X and Y (Tablets), and
 Wider than Y (Most computers).
-
-Generally speaking, it's all about consuming content--at what sizes do we need to redesign our sites to make content easy?
 
 
 To take a stab in the dark,
@@ -39,118 +37,97 @@ For now, let's focus on getting to a one-column layout under 980px.
 /* WIDE-SIZE
 
 
-This block styles the main page for 980px and wider */
-
-@media (min-width: 980px) {
-    body {
-        margin: 0;
-        padding: 0;
-        /* background-color: #424242; */
+This block styles the main page for wide screens */
+body {
+  @media (min-width: 760px) {
+    margin: 0;
+    padding: 0;
+    }
+  @media (max-width: 759px) {
+    margin: 0;
+    padding: 0;
     }
     /* See _Nav for header styling */
     /* These blocks style the content*/
-    main {
-        display:block;
-        background-color: #fff;
-        width: 740px;
-        margin: 0px auto;
-    }
-
-    section .main-content {
-        width: 520px;
-        margin: 20px 0;
+main {
+    @media ($large-breakpoint) {
+      display:block;
+      background-color: #fff;
+      width: 80%;
+      margin: 0px auto;
+      }
+    @media ($small-breakpoint) {
+      display:block;
+      background-color: #fff;
+      width: 90%;
+      margin: 0px auto;
+      }
+      .main-content {
+        margin: 0;
         padding: 0;
-        float: left;
-    }
+        color: #666;
+        h1 {
+          font-family: $display-font;
+          font-size: 2.5em;
+          text-align: center;
+          margin-top: 0;
+          }
+        h2 {
+          text-align: center;
+          font-family: $body-fonts;
+          font-size: 2.5em;
+          text-align: center;
+          margin-top: 0;
+          }
+        h3 {
+          text-align: left;
+          border-left: 3px solid #924343;
+          padding: 5px;
+          }
+        p {
+          font-size: 1.5em;
+          font-family: $body-fonts;
+          }
+        }
+      }
 
-    h1, h2, h3, h4, h5, h6, p {
-        color: #666666;
-    }
+
+label {
+    text-align: left;
+    display:block;
+    font-family: $body-fonts;
+    color:#2a3130;
+    font-size: 2.5em;
+    margin-top: 0;
 }
-   h1 {
-        /* border-left: 3px solid #A32528; */
-        font-family: $display-font;
-        font-size: 2.5em;
-        text-align: center;
-        margin-top: 0;
-    }
-    h2 {
-        text-align: center;
-        font-family: $body-fonts;
-        font-size: 2.5em;
-        text-align: center;
-        margin-top: 0;
-    }
 
-    label {
-        text-align: left;
-        display:block;
-        font-family: $body-fonts;
-        color:#2a3130;
-        font-size: 2.5em;
-        margin-top: 0;
-    }
-    h3 {
-        text-align: left;
-        border-left: 3px solid #924343;
-        padding: 5px;
-    }
-    p {
-        font-size: 1.5em;
-        font-family: $body-fonts;
-    }
-    main li {
-      color:#666666;
-    }
 
+
+/*This block triggers the menu dropdowns in the CV*/
 .content-trigger{
   max-height: 0;
   overflow:hidden;
   transition: max-height .25s;
-}
+  }
+.trigger-checkbox{
+  display:none;
+  &:checked ~ .content-trigger {
+    max-height: 3000px;
+    transition: max-height 1s;
+    }
+  &:checked ~ label {
+    text-align:center;
+    transition: text-align 2s;
+    }
+  }
 
-.trigger-checkbox:checked ~ .content-trigger {
-  max-height: 3000px;
-  transition: max-height 1s;
-}
-
-.trigger-checkbox:checked ~ label {
-  text-align:center;
-  transition: text-align 2s;
 }
 /* Add transitions so the headers slide out */
 
-
-.trigger-checkbox{
-  display:none;
-}
-
-
+ /*  .sidebar */
 /* The code below styles content for narrower screens*/
-
-@media (max-width: 979px) {
-  body {
-      background-color: white;
-      margin: 0;
-      padding: 0;
-  }
-  div#pagewrap {
-      width: 94%;
-      margin: 3%;
-  }
-  /* These blocks style the navigation bar*/
-  nav {
-      height: 100%;
-      margin: 2%;
-      background-color: white;
-      display: block;
-  }
-  nav img {
-      display: block;
-      background-color: white;
-      margin: auto;
-      width: 300px;
-  }
+/*
+@media (max-width: 759px) {
   nav ul {
       list-style-type: none;
       margin: auto;
@@ -177,16 +154,13 @@ This block styles the main page for 980px and wider */
   }
   nav a:hover {
       /* change link color on hover*/
-      color: #A32528;
+    /*  color: #A32528;
       background-color: #555;
       padding: 5px;
   }
   /* These blocks style the content*/
-  main {
-      position: relative;
-      margin: 10px;
-  }
-  h1 {
+
+/*  h1 {
       color: red;
       font-family: $body-fonts;
       font-size: 2.5em;
@@ -206,3 +180,4 @@ This block styles the main page for 980px and wider */
       font-family: $body-fonts;
   }
 }
+*/
