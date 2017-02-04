@@ -1,6 +1,6 @@
 footer {
     width: 100%;
-    background-color:#439292;
+    background-color:$darkblue-prime;
     position:fixed;
     right: 0;
     bottom: 0;
@@ -13,6 +13,6 @@ footer {
       max-width: auto;
       color: #dfdbd6;
       font-size: 1em;
-      font-family: $nav-font;
+      font-family: $nav-fonts;
     }
 }

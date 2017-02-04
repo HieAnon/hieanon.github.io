@@ -63,11 +63,11 @@ main {
       margin: 0px auto 100px;
       }
       .main-content {
-        margin: 0;
+        margin: auto auto 100px;
         padding: 0;
         color: #666;
         h1 {
-          font-family: $display-font;
+          font-family: $mainhead-fonts;
           font-size: 2.5em;
           text-align: center;
           margin-top: 0;

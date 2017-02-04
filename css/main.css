@@ -3,7 +3,7 @@ header {
   float: left;
   width: 100%;
   margin-right: 2%;
-  background-color: #439292; }
+  background-color: #264470; }
   @media (min-width: 760px) {
     header img {
       display: inline;
@@ -53,7 +53,7 @@ header {
 /*styles the navigation bar*/
 footer {
   width: 100%;
-  background-color: #439292;
+  background-color: #264470;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -127,7 +127,7 @@ body {
       width: 90%;
       margin: 0px auto 100px; } }
   body main .main-content {
-    margin: 0;
+    margin: auto auto 100px;
     padding: 0;
     color: #666; }
     body main .main-content h1 {

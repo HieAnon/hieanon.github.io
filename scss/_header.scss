@@ -2,7 +2,7 @@ header {
     float: left;
     width: 100%;
     margin-right: 2%;
-    background-color:#439292;
+    background-color:$darkblue-prime;
       img {
         @media ($large-breakpoint) {
         display: inline;
@@ -21,7 +21,7 @@ header {
         margin: 10px auto;
         max-width: auto;
         color: #dfdbd6;
-        font-family: $display-font;
+        font-family: $mainhead-fonts;
         font-size: 1.5em;
         @media ($large-breakpoint) {
           text-align: left;
@@ -42,7 +42,7 @@ header {
           padding: 8px;
           text-decoration: none;
           text-align: right;
-          font-family: $nav-font;
+          font-family: $nav-fonts;
           font-weight:bold;
           font-size: 1.5em;
           color: #2a3130;
