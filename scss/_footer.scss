@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    background-color:$blue-prime;
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    p {
+      display: block;
+      margin: 10px auto;
+      max-width: auto;
+      color: $blue-lightest-tint;
+      font-size: 1em;
+      font-family: $nav-fonts;
+    }
+    a {
+      text-decoration: none;
+      text-align: right;
+      color: $blue-lighter-tint;
+    }
+}

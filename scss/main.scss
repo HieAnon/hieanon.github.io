@@ -1,0 +1,185 @@
+@import "settings"; /*styles the defaults */
+@import "header"; /*styles the navigation bar*/
+@import "footer"; /*Styles the footer*/
+
+
+
+/*
+Primary colors used are:
+#924343
+#6b4392
+#6a9243
+#439292
+#dfdbd6
+#2a3130
+
+
+Media Queries: Current Breakpoint
+Between X and Y (Tablets), and
+Wider than Y (Most computers).
+
+
+To take a stab in the dark,
+
+y= 980px --Wider than this and the main two-column layout works fine.
+
+For now, let's focus on getting to a one-column layout under 980px.
+*/
+
+/* WIDE-SIZE
+
+
+This block styles the main page for wide screens */
+body {
+  background-color: $blue-lightest-tint;
+  @media (min-width: 760px) {
+    margin: 0;
+    padding: 0;
+    }
+  @media (max-width: 759px) {
+    margin: 0;
+    padding: 0;
+    }
+    /* See _Nav for header styling */
+    /* These blocks style the content*/
+main {
+    @media ($large-breakpoint) {
+      display:block;
+      background-color: $blue-lightest-tint;
+      width: 80%;
+      margin: 0px auto;
+      }
+    @media ($small-breakpoint) {
+      display:block;
+      background-color: $blue-lightest-tint;
+      width: 90%;
+      margin: 0px auto 100px;
+      }
+      .main-content {
+        margin: auto auto 100px;
+        padding: 0;
+        color: $blue-darker-shade;
+        h1 {
+          font-family: $mainhead-fonts;
+          font-size: 2.5em;
+          text-align: left;
+          margin-top: 0;
+          }
+        h2 {
+          text-align: center;
+          font-family: $body-fonts;
+          font-size: 2.5em;
+          text-align: center;
+          margin-top: 0;
+          }
+        h3 {
+          text-align: left;
+          border-left: 3px solid $blue-tint;
+          padding: 5px;
+          }
+        p {
+          font-size: 1.5em;
+          font-family: $body-fonts;
+          }
+        li {
+          font-family: $body-fonts;
+        }
+        }
+      }
+
+.code-example{
+  font-family: $code-fonts;
+  background-color: $blue-darker-shade;
+  color: $blue-tint;
+}
+
+label {
+    text-align: left;
+    display:block;
+    font-family: $body-fonts;
+    color:$blue-prime;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+
+
+/*This block triggers the menu dropdowns in the CV*/
+.content-trigger{
+  max-height: 0;
+  overflow:hidden;
+  transition: max-height .25s;
+  }
+.trigger-checkbox{
+  display:none;
+  &:checked ~ .content-trigger {
+    max-height: 3000px;
+    transition: max-height 1s;
+    }
+  &:checked ~ label {
+    text-align:center;
+    color: $blue-tint;
+    transition: text-align 2s;
+    }
+  }
+
+}
+/* Add transitions so the headers slide out */
+
+ /*  .sidebar */
+/* The code below styles content for narrower screens*/
+/*
+@media (max-width: 759px) {
+  nav ul {
+      list-style-type: none;
+      margin: auto;
+      padding: 0;
+      width: 300px;
+      background-color: white;
+  }
+  nav li {
+      display: inline-block;
+      padding: 5px;
+      margin:0;
+      text-decoration: none;
+      text-align: right;
+      font-family: $display-font;
+      font-weight: bold;
+      font-size: 1.25em;
+      color: #555;
+      background-color: white;
+  }
+  nav li a {
+      text-decoration: none;
+      text-align: right;
+      padding: 5px;
+  }
+  nav a:hover {
+      /* change link color on hover*/
+    /*  color: #A32528;
+      background-color: #555;
+      padding: 5px;
+  }
+  /* These blocks style the content*/
+
+/*  h1 {
+      color: red;
+      font-family: $body-fonts;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0;
+  }
+  h2 {
+      text-align: center;
+  }
+  h3 {
+      text-align: left;
+      color: darkslategray;
+  }
+  p {
+      color: black;
+      font-size: 1.5em;
+      font-family: $body-fonts;
+  }
+}
+*/

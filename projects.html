@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Dosis|Rambla" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Dosis|Inconsolata|Rambla|Volkhov" rel="stylesheet">
     <title>
         Topher Lawton | Information Designer
     </title>
@@ -11,20 +11,32 @@
 </head>
 
 <body>
-    <nav>
+    <header>
         <img src="HieAnonSheep.png" alt="HieAnon Sheep Graffiti picture">
-        <ul>
+        <p class="title"> Topher Lawton | Information Designer </p>
+        <nav>
+          <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="cv.html">CV</a></li>
-            <li><strong>Projects</strong></li>
-        </ul>
-    </nav>
+            <li class="active-link">Projects</li>
+          </ul>
+        </nav>
+    </header>
 
     <main>
-        <h1>Under Construction</h1>
-        <p>This page will soon hold my portfolio--nothing here yet, but soon!
-        </p>
+      <section class="main-content">
+        <article>
+          <h1>Website Tutorials</h1>
+            <h3><a href="/projects/css-accordion/index.html">CSS-Only Accordions</a></h3> <!-- Add a link to the tutorial page? -->
+              <p>The toggled content throughout the site uses this method to avoid javascript.<p>
+        </article>
+        <article>
+          <h1>More Coming Soon</h1>
+            <p>Further Bulletins as Events Warrant.
+            </p>
+        </article>
+      </section>
     </main>
 
     <footer>

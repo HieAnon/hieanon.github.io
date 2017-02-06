@@ -1,0 +1,66 @@
+header {
+    float: left;
+    width: 100%;
+    margin-right: 2%;
+    background-color:$blue-prime;
+      img {
+        @media ($large-breakpoint) {
+        display: inline;
+        margin: auto;
+        padding-right: 10px;
+        max-width: auto;
+        height:100px;
+        float: left;
+        }
+        @media ($small-breakpoint) {
+          margin: auto;
+          width: 100%;
+          }
+        }
+      p.title {
+        display: block;
+        margin: 10px auto;
+        max-width: auto;
+        color: $blue-lightest-tint;
+        font-family: $mainhead-fonts;
+        font-size: 1.5em;
+        @media ($large-breakpoint) {
+          text-align: left;
+        }
+        @media ($small-breakpoint) {
+          text-align: center;
+        }
+        }
+      nav {
+        ul{
+          list-style-type: none;
+          margin: auto;
+          padding: 10px;
+          display: block;
+          .active-link {
+            color: $blue-prime;
+            font-weight: bold;
+            background-color: $blue-lightest-tint;
+            }
+        }
+
+        li {
+          display: inline;
+          padding: 8px;
+          text-decoration: none;
+          text-align: right;
+          font-family: $mainhead-fonts;
+          font-weight:regular;
+          font-size: 1.5em;
+          a {
+            text-decoration: none;
+            text-align: right;
+            color: $blue-lightest-tint;
+            }
+          &:hover {
+            /*change link color on hover */
+            background-color: $blue-darker-shade;
+            }
+          }
+        }
+  }

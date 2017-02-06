@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Dosis|Rambla" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Dosis|Inconsolata|Rambla|Volkhov" rel="stylesheet">
     <title>
-        Topher Lawton | Curriculum Vitae
+        Topher Lawton | Information Designer
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+  <header>
+    <img src="HieAnonSheep.png" alt="HieAnon Sheep Graffiti picture">
+    <p class="title"> Topher Lawton | Information Designer </p>
     <nav>
-        <img src="HieAnonSheep.png" alt="HieAnon Sheep Graffiti picture">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><strong>CV</strong></li>
+            <li class="active-link">CV</li>
             <li><a href="projects.html">Projects</a></li>
         </ul>
     </nav>
-
+  </header>
     <!---
 CV Content copied over from the CV created 20160509, then edited for the web.
 
 TODO:      Highlight invited/reviewed scholarship; on hover? with filters?
   -->
     <main>
+      <section class="main-content">
         <article>
             <h1>Curriculum Vitae</h1>
-            <h2>Topher Lawton - @hieanon</h2>
+
             <section id="areasOfExpertise">
                 <!--<h2 class="section-header">Areas of Expertise</h2> -->
 
@@ -338,5 +341,11 @@ TODO:      Highlight invited/reviewed scholarship; on hover? with filters?
 
             </section>
         </article>
+      </section>
     </main>
+    <footer>
+
+        <p class="site-info">
+        Version 0 |  Site initially created 24 July 2016 | <a href="https://github.com/HieAnon/hieanon.github.io">Code on Github</a></p>
+    </footer>
 </body>

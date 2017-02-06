@@ -1,0 +1,237 @@
+/*styles the defaults */
+header {
+  float: left;
+  width: 100%;
+  margin-right: 2%;
+  background-color: #264470; }
+  @media (min-width: 760px) {
+    header img {
+      display: inline;
+      margin: auto;
+      padding-right: 10px;
+      max-width: auto;
+      height: 100px;
+      float: left; } }
+  @media (max-width: 759px) {
+    header img {
+      margin: auto;
+      width: 100%; } }
+  header p.title {
+    display: block;
+    margin: 10px auto;
+    max-width: auto;
+    color: #E4E8ED;
+    font-family: "Cinzel", sans-serif;
+    font-size: 1.5em; }
+    @media (min-width: 760px) {
+      header p.title {
+        text-align: left; } }
+    @media (max-width: 759px) {
+      header p.title {
+        text-align: center; } }
+  header nav ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 10px;
+    display: block; }
+    header nav ul .active-link {
+      color: #264470;
+      font-weight: bold;
+      background-color: #E4E8ED; }
+  header nav li {
+    display: inline;
+    padding: 8px;
+    text-decoration: none;
+    text-align: right;
+    font-family: "Cinzel", sans-serif;
+    font-weight: regular;
+    font-size: 1.5em; }
+    header nav li a {
+      text-decoration: none;
+      text-align: right;
+      color: #E4E8ED; }
+    header nav li:hover {
+      /*change link color on hover */
+      background-color: #0E1A2A; }
+
+/*styles the navigation bar*/
+footer {
+  width: 100%;
+  background-color: #264470;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  box-sizing: border-box; }
+  footer p {
+    display: block;
+    margin: 10px auto;
+    max-width: auto;
+    color: #E4E8ED;
+    font-size: 1em;
+    font-family: "Dosis", serif; }
+  footer a {
+    text-decoration: none;
+    text-align: right;
+    color: #AEB9C9; }
+
+/*Styles the footer*/
+/*
+Primary colors used are:
+#924343
+#6b4392
+#6a9243
+#439292
+#dfdbd6
+#2a3130
+
+
+Media Queries: Current Breakpoint
+Between X and Y (Tablets), and
+Wider than Y (Most computers).
+
+
+To take a stab in the dark,
+
+y= 980px --Wider than this and the main two-column layout works fine.
+
+For now, let's focus on getting to a one-column layout under 980px.
+*/
+/* WIDE-SIZE
+
+
+This block styles the main page for wide screens */
+body {
+  background-color: #E4E8ED;
+  /* See _Nav for header styling */
+  /* These blocks style the content*/
+  /*This block triggers the menu dropdowns in the CV*/ }
+  @media (min-width: 760px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+  @media (max-width: 759px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+  @media (min-width: 760px) {
+    body main {
+      display: block;
+      background-color: #E4E8ED;
+      width: 80%;
+      margin: 0px auto; } }
+  @media (max-width: 759px) {
+    body main {
+      display: block;
+      background-color: #E4E8ED;
+      width: 90%;
+      margin: 0px auto 100px; } }
+  body main .main-content {
+    margin: auto auto 100px;
+    padding: 0;
+    color: #0E1A2A; }
+    body main .main-content h1 {
+      font-family: "Cinzel", sans-serif;
+      font-size: 2.5em;
+      text-align: left;
+      margin-top: 0; }
+    body main .main-content h2 {
+      text-align: center;
+      font-family: "Volkhov", serif;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0; }
+    body main .main-content h3 {
+      text-align: left;
+      border-left: 3px solid #5C7394;
+      padding: 5px; }
+    body main .main-content p {
+      font-size: 1.5em;
+      font-family: "Volkhov", serif; }
+    body main .main-content li {
+      font-family: "Volkhov", serif; }
+  body .code-example {
+    font-family: "inconsolata", monospaced;
+    background-color: #0E1A2A;
+    color: #5C7394; }
+  body label {
+    text-align: left;
+    display: block;
+    font-family: "Volkhov", serif;
+    color: #264470;
+    font-size: 2.5em;
+    margin-top: 0; }
+  body .content-trigger {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s; }
+  body .trigger-checkbox {
+    display: none; }
+    body .trigger-checkbox:checked ~ .content-trigger {
+      max-height: 3000px;
+      transition: max-height 1s; }
+    body .trigger-checkbox:checked ~ label {
+      text-align: center;
+      color: #5C7394;
+      transition: text-align 2s; }
+
+/* Add transitions so the headers slide out */
+/*  .sidebar */
+/* The code below styles content for narrower screens*/
+/*
+@media (max-width: 759px) {
+  nav ul {
+      list-style-type: none;
+      margin: auto;
+      padding: 0;
+      width: 300px;
+      background-color: white;
+  }
+  nav li {
+      display: inline-block;
+      padding: 5px;
+      margin:0;
+      text-decoration: none;
+      text-align: right;
+      font-family: $display-font;
+      font-weight: bold;
+      font-size: 1.25em;
+      color: #555;
+      background-color: white;
+  }
+  nav li a {
+      text-decoration: none;
+      text-align: right;
+      padding: 5px;
+  }
+  nav a:hover {
+      /* change link color on hover*/
+  /*  color: #A32528;
+    background-color: #555;
+    padding: 5px;
+}
+/* These blocks style the content*/
+/*  h1 {
+      color: red;
+      font-family: $body-fonts;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0;
+  }
+  h2 {
+      text-align: center;
+  }
+  h3 {
+      text-align: left;
+      color: darkslategray;
+  }
+  p {
+      color: black;
+      font-size: 1.5em;
+      font-family: $body-fonts;
+  }
+}
+*/
+
+/*# sourceMappingURL=main.css.map */
