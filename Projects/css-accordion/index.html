@@ -5,29 +5,110 @@
     <link rel="stylesheet" type="text/css" href="accordionfromscss.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Dosis|Rambla" rel="stylesheet">
     <title>
-        CSS-only accordions
+        CSS-only accordions | Topher Lawton
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+  <header>
+    <img src="/HieAnonSheep.png" alt="HieAnon Sheep Graffiti picture">
+    <p class="title"> Topher Lawton | Information Designer </p>
+    <nav>
+      <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/cv.html">CV</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="main-content">
+      <h1>CSS-Only Accordions</h1>
 
+      <h2>Intro/rationale</h2>
+        <p> This is a lightweight site, and I wanted to add some accordion-style functionality while preserving the load speed of a site free of javascript and jquery. This is one way to do that. </p>
+      <h2>The code in action</h2>
+      <input type="checkbox" class="trigger-checkbox" id="accordion-trigger">
+      <!--This line creates a checkbox. When checked, we'll show the accordion content, when unchecked, we'll hide it.-->
 
-<input type="checkbox" class="trigger-checkbox" id="accordion-trigger">
-<!--This line creates a checkbox. When checked, we'll show the accordion content, when unchecked, we'll hide it.-->
+      <label for="accordion-trigger">This is a header/accordion button</label>
+      <!-- the "for" clause here links this label to the matching id in the input tag, so a click will check the box
+      Then, we can hide the box, and style the label however we might choose. -->
 
-<label for="accordion-trigger">This is a header/accordion button</label>
-<!-- the "for" clause here links this label to the matching id in the input tag, so a click will check the box
-Then, we can hide the box, and style the label however we might choose. -->
+      <div class="accordion-content">
+      <!--We need a block to show or hide,and a div is the easiest way to create that.-->
+        <p> This is some content that we want to show or hide on click.</p>
+        <!--We can put whatever content we want in the .accordion-content div.-->
+      </div>
 
-<div class="accordion-content">
-<!--We need a block to show or hide,and a div is the easiest way to create that.-->
+      <h2>HTML</h2>
+      <pre class="code-example"><code>
+      &lt;input type="checkbox" class="trigger-checkbox" id="accordion-trigger"&gt;
+      &lt;!--This line creates a checkbox. When checked, we'll show the accordion content, when unchecked, we'll hide it.--&gt;
 
-  <p> This is some content that we want to show or hide on click.</p>
-  <!-- -->
+      &lt;label for="accordion-trigger"&gt;This is a header/accordion button&lt;/label&gt;
+      &lt;!-- the "for" clause here links this label to the matching id in the input tag, so a click will check the box
+      Then, we can hide the box, and style the label however we might choose. --&gt;
 
-</div>
+      &lt;div class="accordion-content"&gt;
+      &lt;!--We need a block to show or hide,and a div is the easiest way to create that.--&gt;
+        &lt;p&gt; This is some content that we want to show or hide on click.&lt;/p&gt;
+        &lt;!--We can put whatever content we want in the .accordion-content div.--&gt;
 
+    </code></pre>
+    </div>
+
+      <h2>CSS</h2>
+      <pre class="code-example"><code>
+        label {
+            text-align: left;
+            display:block;
+            font-family: 'Rambla', sans-serif;
+            color:slateblue;
+            font-size: 2.5em;
+            margin-top: 0;
+            @media (min-width: 980px) {
+              color:grey;
+            }
+        }
+
+        @mixin transition-height($duration, $style) {
+          transition: max-height $duration $style;
+        }
+
+        .accordion-content{
+          max-height: 0;
+          overflow:hidden;
+           @include transition-height(.25s, ease);
+        }
+        .trigger-checkbox{
+          display:none;
+          &:checked {
+            ~ .accordion-content {
+              max-height: 3000px;
+              @include transition-height(1s, linear);
+            }
+            ~ label {
+              text-align: center;
+            }
+        }
+        }
+
+        /* Add transitions so the headers slide out */
+
+      </code></pre>
+    <h2>Final Thoughts</h2>
+<p> These CSS-only accordions are lightweight, blindingly fast, and functional for a majority of use cases. I'm a big fan of human-parsable code, so...it's a thing! The next step is to have some sort of visual trigger--when I figure that out, I'll update the tutorial!</p>
+
+    </section>
+  </main>
+  <footer>
+
+      <p class="site-info">
+      Version 0 |  Site initially created 24 July 2016 | <a href="https://github.com/HieAnon/hieanon.github.io">Code on Github</a></p>
+  </footer>
 </body>
 
 </html>

@@ -1,10 +1,17 @@
 $mainhead-fonts:'Cinzel', sans-serif;
-$subhead-fonts:sans-serif;
-$body-fonts:'Rambla', sans-serif;
+$subhead-fonts:'Rambla', sans-serif;
+$body-fonts:'Volkhov', serif;
 $code-fonts: 'inconsolata', monospaced;
 $nav-fonts:'Dosis', serif;
 
-$darkblue-prime: #264470;
+$blue-lightest-tint:#E4E8ED;
+$blue-lighter-tint:#AEB9C9;
+$blue-tint:#5C7394;
+$blue-prime: #264470;
+$blue-shade: #1D3354;
+$blue-darker-shade: #0E1A2A;
+$blue-darkest-shade: #05090E;
+
 
 $large-breakpoint: "min-width: 760px";
 $small-breakpoint: "max-width: 759px";

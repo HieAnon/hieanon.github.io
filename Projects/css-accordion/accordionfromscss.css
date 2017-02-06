@@ -25,3 +25,8 @@ label {
 /* Add transitions so the headers slide out */
 
 /*# sourceMappingURL=accordionfromscss.css.map */
+.code-example{
+  font-family: $code-fonts;
+  background-color: $blue-darker-shade;
+  color: $blue-tint;
+}

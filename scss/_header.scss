@@ -2,11 +2,12 @@ header {
     float: left;
     width: 100%;
     margin-right: 2%;
-    background-color:$darkblue-prime;
+    background-color:$blue-prime;
       img {
         @media ($large-breakpoint) {
         display: inline;
         margin: auto;
+        padding-right: 10px;
         max-width: auto;
         height:100px;
         float: left;
@@ -20,7 +21,7 @@ header {
         display: block;
         margin: 10px auto;
         max-width: auto;
-        color: #dfdbd6;
+        color: $blue-lightest-tint;
         font-family: $mainhead-fonts;
         font-size: 1.5em;
         @media ($large-breakpoint) {
@@ -36,25 +37,30 @@ header {
           margin: auto;
           padding: 10px;
           display: block;
+          .active-link {
+            color: $blue-prime;
+            font-weight: bold;
+            background-color: $blue-lightest-tint;
+            }
         }
+
         li {
           display: inline;
           padding: 8px;
           text-decoration: none;
           text-align: right;
-          font-family: $nav-fonts;
-          font-weight:bold;
+          font-family: $mainhead-fonts;
+          font-weight:regular;
           font-size: 1.5em;
-          color: #2a3130;
           a {
             text-decoration: none;
             text-align: right;
-            color: #dfdbd6;
-            &:hover {
-              /*change link color on hover */
-              background-color: #2a3130;
+            color: $blue-lightest-tint;
+            }
+          &:hover {
+            /*change link color on hover */
+            background-color: $blue-darker-shade;
             }
           }
         }
-      }
-}
+  }
