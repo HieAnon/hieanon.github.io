@@ -1,0 +1,22 @@
+TO-DO LIST
+
+Content To-Dos
+-homepage
+--add epigraph? ONLY epigraph?
+
+-projects
+--finish the CSS-Accordions. Will involve creating code examples (see code/CSS to-dos)
+--decide what should be next after css accordions
+
+header/footer on project pages? simplified header with a "back to site" option?
+
+
+Code To-Dos
+-Refactor CSS for mobile
+--Navbar should have all 4 links on one row even at very small sizes--reduce padding, margins, etc.
+
+--style non-navbar links, especially h3
+
+-projects
+--decide how much info to include about each that's on on the project page, and how to style
+--decide if design pieces (ampersand portfolio?) should be included.
