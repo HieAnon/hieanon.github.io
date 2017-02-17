@@ -46,12 +46,18 @@ header {
 
         li {
           display: inline;
-          padding: 8px;
           text-decoration: none;
           text-align: right;
           font-family: $mainhead-fonts;
           font-weight:regular;
           font-size: 1.5em;
+          @media ($large-breakpoint) {
+          padding: 8px;
+          }
+          @media ($small-breakpoint) {
+          padding: 3px;
+          box-sizing: border-box;
+          }
           a {
             text-decoration: none;
             text-align: right;

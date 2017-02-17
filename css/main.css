@@ -40,12 +40,18 @@ header {
       background-color: #E4E8ED; }
   header nav li {
     display: inline;
-    padding: 8px;
     text-decoration: none;
     text-align: right;
     font-family: "Cinzel", sans-serif;
     font-weight: regular;
     font-size: 1.5em; }
+    @media (min-width: 760px) {
+      header nav li {
+        padding: 8px; } }
+    @media (max-width: 759px) {
+      header nav li {
+        padding: 3px;
+        box-sizing: border-box; } }
     header nav li a {
       text-decoration: none;
       text-align: right;
