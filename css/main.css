@@ -32,7 +32,7 @@ header {
   header nav ul {
     list-style-type: none;
     margin: auto;
-    padding: 10px;
+    padding: 10px 10px 0px;
     display: block; }
     header nav ul .active-link {
       color: #264470;
@@ -40,12 +40,19 @@ header {
       background-color: #E4E8ED; }
   header nav li {
     display: inline;
-    padding: 8px;
     text-decoration: none;
     text-align: right;
     font-family: "Cinzel", sans-serif;
     font-weight: regular;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    font-size: 1.25em; }
+    @media (min-width: 760px) {
+      header nav li {
+        padding: 8px; } }
+    @media (max-width: 759px) {
+      header nav li {
+        padding: 3px;
+        box-sizing: border-box; } }
     header nav li a {
       text-decoration: none;
       text-align: right;
@@ -69,8 +76,8 @@ footer {
     margin: 10px auto;
     max-width: auto;
     color: #E4E8ED;
-    font-size: 1em;
-    font-family: "Dosis", serif; }
+    font-size: .75em;
+    font-family: "Volkhov", serif; }
   footer a {
     text-decoration: none;
     text-align: right;
