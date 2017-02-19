@@ -35,7 +35,7 @@ header {
         ul{
           list-style-type: none;
           margin: auto;
-          padding: 10px;
+          padding: 10px 10px 0px;
           display: block;
           .active-link {
             color: $blue-prime;
@@ -58,6 +58,7 @@ header {
           padding: 3px;
           box-sizing: border-box;
           }
+          font-size: 1.25em;
           a {
             text-decoration: none;
             text-align: right;
