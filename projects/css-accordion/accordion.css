@@ -1,29 +1,167 @@
-label {
-    text-align: left;
-    display:block;
-    font-family: 'Rambla', sans-serif;
-    color:slateblue;
+/*styles the defaults */
+header {
+  float: left;
+  width: 100%;
+  margin-right: 2%;
+  background-color: #264470; }
+  @media (min-width: 760px) {
+    header img {
+      display: inline;
+      margin: auto;
+      padding-right: 10px;
+      max-width: auto;
+      height: 100px;
+      float: left; } }
+  @media (max-width: 759px) {
+    header img {
+      margin: auto;
+      width: 100%; } }
+  header p.title {
+    display: block;
+    margin: 10px auto;
+    max-width: auto;
+    color: #E4E8ED;
+    font-family: "Cinzel", sans-serif;
+    font-size: 1.5em; }
+    @media (min-width: 760px) {
+      header p.title {
+        text-align: left; } }
+    @media (max-width: 759px) {
+      header p.title {
+        text-align: center; } }
+  header nav ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 10px 10px 0px;
+    display: block; }
+    header nav ul .active-link {
+      color: #264470;
+      font-weight: bold;
+      background-color: #E4E8ED; }
+  header nav li {
+    display: inline;
+    text-decoration: none;
+    text-align: right;
+    font-family: "Cinzel", sans-serif;
+    font-weight: regular;
+    font-size: 1.5em;
+    font-size: 1.25em; }
+    @media (min-width: 760px) {
+      header nav li {
+        padding: 8px; } }
+    @media (max-width: 759px) {
+      header nav li {
+        padding: 3px;
+        box-sizing: border-box; } }
+    header nav li a {
+      text-decoration: none;
+      text-align: right;
+      color: #E4E8ED; }
+    header nav li:hover {
+      /*change link color on hover */
+      background-color: #0E1A2A; }
+
+/*styles the navigation bar*/
+footer {
+  width: 100%;
+  background-color: #264470;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  box-sizing: border-box; }
+  footer p {
+    display: block;
+    margin: 10px auto;
+    max-width: auto;
+    color: #E4E8ED;
+    font-size: .75em;
+    font-family: "Volkhov", serif; }
+  footer a {
+    text-decoration: none;
+    text-align: right;
+    color: #AEB9C9; }
+
+/*Styles the footer*/
+body {
+  background-color: #E4E8ED; }
+  @media (min-width: 760px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+  @media (max-width: 759px) {
+    body {
+      margin: 0;
+      padding: 0; } }
+
+@media (min-width: 760px) {
+  main {
+    display: block;
+    background-color: #E4E8ED;
+    width: 80%;
+    margin: 0px auto; } }
+@media (max-width: 759px) {
+  main {
+    display: block;
+    background-color: #E4E8ED;
+    width: 90%;
+    margin: 0px auto 100px; } }
+main .main-content {
+  margin: auto auto 100px;
+  padding: 0;
+  color: #0E1A2A; }
+  main .main-content h1 {
+    font-family: "Cinzel", sans-serif;
     font-size: 2.5em;
-    margin-top: 0;
-}
+    text-align: left;
+    margin-top: 0; }
+  main .main-content h2 {
+    text-align: center;
+    font-family: "Volkhov", serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 0; }
+  main .main-content h3 {
+    text-align: left;
+    font-family: "Volkhov", serif;
+    border-left: 3px solid #5C7394;
+    padding: 5px; }
+  main .main-content p {
+    font-size: 1.5em;
+    font-family: "Volkhov", serif; }
+  main .main-content li {
+    font-family: "Volkhov", serif; }
 
-.accordion-content{
+label {
+  text-align: left;
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  color: slateblue;
+  font-size: 2.5em;
+  margin-top: 0; }
+  @media (min-width: 980px) {
+    label {
+      color: grey; } }
+
+.code-example {
+  font-family: "inconsolata", monospaced;
+  background-color: #0E1A2A;
+  color: #5C7394; }
+
+.accordion-content {
   max-height: 0;
-  overflow:hidden;
-  transition: max-height .25s;
-}
+  overflow: hidden;
+  transition: max-height 0.25s ease; }
 
-.trigger-checkbox{
-  display:none;
-}
+.trigger-checkbox {
+  display: none; }
+  .trigger-checkbox:checked ~ .accordion-content {
+    max-height: 3000px;
+    transition: max-height 1s linear; }
+  .trigger-checkbox:checked ~ label {
+    text-align: center; }
 
-.trigger-checkbox:checked ~ .accordion-content {
-  max-height: 3000px;
-  transition: max-height 1s;
-}
-
-.trigger-checkbox:checked ~ label {
-  text-align:center;
-  transition: text-align 2s;
-}
 /* Add transitions so the headers slide out */
+
+/*# sourceMappingURL=accordion.css.map */

@@ -1,3 +1,64 @@
+@import "../../scss/settings"; /*styles the defaults */
+@import "../../scss/header"; /*styles the navigation bar*/
+@import "../../scss/footer"; /*Styles the footer*/
+
+body {
+  background-color: $blue-lightest-tint;
+  @media (min-width: 760px) {
+    margin: 0;
+    padding: 0;
+    }
+  @media (max-width: 759px) {
+    margin: 0;
+    padding: 0;
+    }
+  }
+main {
+    @media ($large-breakpoint) {
+      display:block;
+      background-color: $blue-lightest-tint;
+      width: 80%;
+      margin: 0px auto;
+      }
+    @media ($small-breakpoint) {
+      display:block;
+      background-color: $blue-lightest-tint;
+      width: 90%;
+      margin: 0px auto 100px;
+      }
+      .main-content {
+        margin: auto auto 100px;
+        padding: 0;
+        color: $blue-darker-shade;
+        h1 {
+          font-family: $mainhead-fonts;
+          font-size: 2.5em;
+          text-align: left;
+          margin-top: 0;
+          }
+        h2 {
+          text-align: center;
+          font-family: $body-fonts;
+          font-size: 2.5em;
+          text-align: center;
+          margin-top: 0;
+          }
+        h3 {
+          text-align: left;
+          font-family: $body-fonts;
+          border-left: 3px solid $blue-tint;
+          padding: 5px;
+          }
+        p {
+          font-size: 1.5em;
+          font-family: $body-fonts;
+          }
+        li {
+          font-family: $body-fonts;
+        }
+        }
+      }
+
 label {
     text-align: left;
     display:block;
@@ -8,6 +69,12 @@ label {
     @media (min-width: 980px) {
       color:grey;
     }
+}
+
+.code-example{
+  font-family: $code-fonts;
+  background-color: $blue-darker-shade;
+  color: $blue-tint;
 }
 
 @mixin transition-height($duration, $style) {
