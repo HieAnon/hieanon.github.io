@@ -151,6 +151,7 @@ body {
       margin-top: 0; }
     body main .main-content h3 {
       text-align: left;
+      font-family: "Volkhov", serif;
       border-left: 3px solid #5C7394;
       padding: 5px; }
     body main .main-content p {
