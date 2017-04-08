@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Dosis|Inconsolata|Rambla|Volkhov" rel="stylesheet">
     <title>
         Topher Lawton | Shape-Note Projects
@@ -51,7 +51,7 @@ Details for your chosen songs will appear below</p>
   </ul>
 </div>
 <br />
-<button onclick="listSongs()">Get Details</button>
+<button onclick="getSongData()">Get Details</button>
 <br />
 <div class="songDetails">
 
@@ -103,16 +103,42 @@ Details for your chosen songs will appear below</p>
   </script>
 
 <script>
+var songID = "172";
+console.log(songID + "your face");
+
 function getSongData(songID) {
-  look at songID
-  compare it to songID in list/json file
-  bring back json object
+  var ajaxstuff = {
+    url : "SacredHarpTitleData.json",
+    dataType: 'json',
+    success: function(response){
+      var html = "";
+      var databack = "";
+      for (var i = 0; i < response.length; i++){
+        if (songID == response[i].pageID) {
+          databack.append(response[i].pageID.toString() + ": " + response[i].songTitle.toString());
+          console.log(databack);
+        } else {
+          console.log("I'm still broken")
+        }
+      }
+    }
+  };
+
+$.ajax(ajaxstuff);
+}
+
+</script>
+<script>
+function getSongListData() {
+  console.log("call getSongData for each item in the list of , after it's working...");
 };
-
-
 </script>
 
 
+
+<!--
+
+THIS IS ALL OLD/REFERENCE STUFF THAT WILL BE DELETED
 
 
 <script>
@@ -131,21 +157,21 @@ var sampleData = [
 
 
 <script>
-
-
-  function listSongOld() {
-      var sampLength = sampleData.length;
-      var output = 'Chosen Songs: ';
-      for (i=0; i < sampLength; i++) {
-        if
-      output += '<div class="data-bit">' + sampleData[i].pageID.toString() + ": " + sampleData[i].songTitle.toString() + '</div>' //printSong(sampleData[i]);
-      }
-      $('.songlist-container').html(output);
-  };
-
-$("#elementId").val(); // The value of the selected option
+//
+//
+//  function listSongOld() {
+//      var sampLength = sampleData.length;
+//      var output = 'Chosen Songs: ';
+//      for (i=0; i < sampLength; i++) {
+//        if
+//      output += '<div class="data-bit">' + sampleData[i].pageID.toString() + ": " + sampleData[i].songTitle.toString() + '</div>' //printSong(sampleData[i]);
+//      }
+//      $('.songlist-container').html(output);
+//  };
+//
+//$("#elementId").val(); // The value of the selected option
 </script>
-<!-- <script>
+ <script>
 //var sampleData = [
 //  {    "pageID": "178",   "songTitle": "Africa"  },
 //  {    "pageID": "38t", "songTitle": "Winter"  },
