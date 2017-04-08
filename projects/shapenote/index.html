@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Dosis|Inconsolata|Rambla|Volkhov" rel="stylesheet">
+    <title>
+        Topher Lawton | Shape-Note Projects
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  <header>
+    <img src="../../../MiniSheep.png" alt="HieAnon Sheep Logo">
+    <nav>
+      <ul>
+          <li><a href="../../index.html">home</a></li>
+          <li><a href="../../about.html">about</a></li>
+          <li><a href="../../portfolio.html">portfolio</a></li>
+          <li><a href="../../contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="main-content">
+      <h1>Sacred Harp Index Subsets</h1>
+<p>This is a pre-alpha version of a tool to print out a "cheat sheet" index of sacred harp tunes, formatted to tuck into a shape-note tunebook.
+<br />
+  Here's how it works:
+<br />
+  Select one of your desired songs from the dropdown, and hit "Add song to list". When your list is complete, hit "Get Details"
+<br />
+Details for your chosen songs will appear below</p>
+<br />
+<!--Phase 1: the selection of the subset for the mini-index" -->
+
+<select name="select" id="SongChooser">
+  <option value="178">178</option>
+  <option value="38t">38t</option>
+  <option value="38b">38b</option>
+  <option value="112">112</option>
+  <option value="107">107</option>
+</select>
+
+<button onclick="listSongs()">Add song to list</button>
+<div class="songList-container">
+  <ul id="chosenSongs">
+
+  </ul>
+</div>
+<br />
+<button onclick="listSongs()">Get Details</button>
+<br />
+<div class="songDetails">
+
+</div>
+
+<br />
+<br />
+<p>If you need a reminder of song titles, click here:</p>
+<button onclick=$.ajax(ajaxcall)>Fetch All Songs</button>
+      <div class="allSong-container">
+      </div>
+
+
+    </section>
+
+  </main>
+  <footer>
+      <p class="site-info">
+      Version 0 |  Site initially created 24 July 2016 | <a href="https://github.com/HieAnon/hieanon.github.io">Code on Github</a></p>
+  </footer>
+
+  <!--SCRIPTS BELOW THIS LINE -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  //This is the script to get all songs to display. it pulls from the data located in this same folder, and will come in handy later.
+  var ajaxcall = {
+    url : "SacredHarpTitleData.json",
+    dataType: 'json',
+    success: function(response){
+      var html = "";
+      for (var i = 0; i < response.length; i++){
+        html += '<div class="data-bit">' + response[i].pageID.toString() + ": " + response[i].songTitle.toString() + '</div>';
+        }
+      $('.allSong-container').html(html)
+
+    }
+  };
+  <!-- // $.ajax(ajaxcall);  This is the former place of the call in the button above. If it's here, it triggers automatically.-->
+  </script>
+
+  <script>
+  function listSongs() {
+      var chosenSong = $('#SongChooser').val();
+      //  console.log(chosenSong); //this was just for testing.
+      var songlist = $('#chosenSongs');
+      songlist.append("<li>" + chosenSong + "</li>");
+      };
+  </script>
+
+<script>
+function getSongData(songID)
+
+</script>
+
+<script>
+//ideally, this will list out the sample dataset below.
+var sampleData = [
+  {    "pageID": "178",   "songTitle": "Africa"  },
+  {    "pageID": "38t", "songTitle": "Winter"  },
+  {    "pageID": "38b", "songTitle": "Windham"  },
+  {    "pageID": "112",   "songTitle": "The Last Words of Copernicus"  },
+  {    "pageID": "107",   "songTitle": "Russia"  },
+];
+//  function printSong(song) {
+//    return('<div class="data-bit">' + song.pageID.toString() + ": " + song.songTitle.toString() + '</div>');
+//  }
+</script>
+
+
+<script>
+
+
+  function listSongOld() {
+      var sampLength = sampleData.length;
+      var output = 'Chosen Songs: ';
+      for (i=0; i < sampLength; i++) {
+        if
+      output += '<div class="data-bit">' + sampleData[i].pageID.toString() + ": " + sampleData[i].songTitle.toString() + '</div>' //printSong(sampleData[i]);
+      }
+      $('.songlist-container').html(output);
+  };
+
+$("#elementId").val(); // The value of the selected option
+</script>
+<!-- <script>
+//var sampleData = [
+//  {    "pageID": "178",   "songTitle": "Africa"  },
+//  {    "pageID": "38t", "songTitle": "Winter"  },
+//  {    "pageID": "38b", "songTitle": "Windham"  },
+//  {    "pageID": "112",   "songTitle": "The Last Words of Copernicus"  },
+//  {    "pageID": "107",   "songTitle": "Russia"  },
+// ];
+//var ID = "" //prompt("Please enter the page of your song:").toString();
+//
+//function GetSongID(ID) {
+//  var sampleData = [
+//    {    "pageID": "178",   "songTitle": "Africa"  },
+//    {    "pageID": "38t", "songTitle": "Winter"  },
+//    {    "pageID": "38b", "songTitle": "Windham"  },
+//    {    "pageID": "112",   "songTitle": "The Last Words of Copernicus"  },
+//    {    "pageID": "107",   "songTitle": "Russia"  },
+//  ];
+//
+//  for (each in sampleData) {
+//  console.log(sampleData.songTitle)
+//  };
+//};
+//</script> -->
+</body>
+</html>
