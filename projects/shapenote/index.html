@@ -51,7 +51,7 @@ Details for your chosen songs will appear below</p>
   </ul>
 </div>
 <br />
-<button onclick="getSongData('178')">Get Details</button>
+<button onclick="getSongDetails('178')">Get Details</button>
 
 <br />
 <div>
@@ -78,6 +78,23 @@ Details for your chosen songs will appear below</p>
   <!--SCRIPTS BELOW THIS LINE -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script> //this will populate the dropdown.
+  var dropdowndata = {
+    url : "SacredHarpTitleData.json",
+    dataType: 'json',
+    success: function(response){
+      var listOptions = "";
+      for (var i = 0; i < response.length; i++){
+        listOptions += '<option value="'+ response[i].pageID.toString() +'">' + response[i].pageID.toString() + '<option>';
+        }
+      $('#SongChooser').html(listOptions);
+
+    }
+  };
+$.ajax(dropdowndata);  // Call the above to avoid more work.
+  </script>
+
   <script>
   //This is the script to get all songs to display. it pulls from the data located in this same folder, and will come in handy later.
   var ajaxcall = {
@@ -96,7 +113,7 @@ Details for your chosen songs will appear below</p>
   </script>
 
 <script> //This script calls and loops through the data to find one song. It should probably be called by another function.
-function getSongData(songID) { // runs when "get details" is clicked. should eventually take a variable songID, but for now declaring it above is ok.
+function getSongDetails(songID) { // runs when "get details" is clicked. should eventually take a variable songID, but for now declaring it above is ok.
 console.log("looking for " + songID)
   var ajaxstuff = { //this variable feeds the ajax call everything it needs to go get the json data.
     url : "SacredHarpTitleData.json", //data location
