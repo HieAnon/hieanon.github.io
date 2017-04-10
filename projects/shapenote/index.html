@@ -30,7 +30,7 @@
 <br />
   Here's how it works:
 <br />
-  Select one of your desired songs from the dropdown, and hit "Add song to list". When your list is complete, hit "Get Details"
+  Select one of your desired songs from the dropdown, and hit "Add song to list"--it'll appear below. When your list is complete, hit "Get Details" and it will fetch info about each song in the list.
 <br />
 Details for your chosen songs will appear below</p>
 <br />
@@ -51,15 +51,17 @@ Details for your chosen songs will appear below</p>
   </ul>
 </div>
 <br />
-<button onclick="getSongData()">Get Details</button>
-<br />
-<div class="songDetails">
+<button onclick="getSongData('178')">Get Details</button>
 
+<br />
+<div>
+<ul class="songDetails-container">
+</ul>
 </div>
 
 <br />
 <br />
-<p>If you need a reminder of song titles, click here:</p>
+<p>If you need a reminder of all song numbers/titles, click here:</p>
 <button onclick=$.ajax(ajaxcall)>Fetch All Songs</button>
       <div class="allSong-container">
       </div>
@@ -93,6 +95,36 @@ Details for your chosen songs will appear below</p>
   <!-- // $.ajax(ajaxcall);  This is the former place of the call in the button above. If it's here, it triggers automatically.-->
   </script>
 
+<script> //This script calls and loops through the data to find one song. It should probably be called by another function.
+function getSongData(songID) { // runs when "get details" is clicked. should eventually take a variable songID, but for now declaring it above is ok.
+console.log("looking for " + songID)
+  var ajaxstuff = { //this variable feeds the ajax call everything it needs to go get the json data.
+    url : "SacredHarpTitleData.json", //data location
+    dataType: 'json',
+    success: function(response){ //callback function. fires when data is successfully "gotten"
+      var songDetails = "";
+      console.log("checking data for " + songID);
+      for (var i = 0; i < response.length; i++){
+        if (songID == response[i].pageID.toString()) {
+          songDetails +=  '<li>' + response[i].pageID.toString() + ": " + response[i].songTitle.toString() + '</li>';
+          console.log(songDetails);
+          $('.songDetails-container').html(songDetails);
+          }
+        }
+      }
+    };
+
+$.ajax(ajaxstuff); //this is the actual ajax call, using the params from the variable above.
+}
+</script>
+
+<script>
+function getSongListData() {
+  console.log("call getSongData for each item in the list of , after it's working...");
+};
+</script>
+
+
   <script>
   function listSongs() {
       var chosenSong = $('#SongChooser').val();
@@ -101,40 +133,6 @@ Details for your chosen songs will appear below</p>
       songlist.append("<li>" + chosenSong + "</li>");
       };
   </script>
-
-<script>
-var songID = "172";
-console.log(songID + "your face");
-
-function getSongData(songID) {
-  var ajaxstuff = {
-    url : "SacredHarpTitleData.json",
-    dataType: 'json',
-    success: function(response){
-      var html = "";
-      var databack = "";
-      for (var i = 0; i < response.length; i++){
-        if (songID == response[i].pageID) {
-          databack.append(response[i].pageID.toString() + ": " + response[i].songTitle.toString());
-          console.log(databack);
-        } else {
-          console.log("I'm still broken")
-        }
-      }
-    }
-  };
-
-$.ajax(ajaxstuff);
-}
-
-</script>
-<script>
-function getSongListData() {
-  console.log("call getSongData for each item in the list of , after it's working...");
-};
-</script>
-
-
 
 <!--
 
