@@ -37,14 +37,12 @@ Details for your chosen songs will appear below</p>
 <!--Phase 1: the selection of the subset for the mini-index" -->
 
 <select name="select" id="SongChooser">
-  <option value="178">178</option>
-  <option value="38t">38t</option>
-  <option value="38b">38b</option>
-  <option value="112">112</option>
-  <option value="107">107</option>
+
 </select>
 
 <button onclick="listSongs()">Add song to list</button>
+
+
 <div class="songList-container">
   <ul id="chosenSongs">
 
@@ -62,7 +60,7 @@ Details for your chosen songs will appear below</p>
 <br />
 <br />
 <p>If you need a reminder of all song numbers/titles, click here:</p>
-<button onclick=$.ajax(ajaxcall)>Fetch All Songs</button>
+<button onclick=$.ajax(allsongs)>Fetch All Songs</button>
       <div class="allSong-container">
       </div>
 
@@ -79,6 +77,14 @@ Details for your chosen songs will appear below</p>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  <script> //makes the
+  function listSongs() {
+      var chosenSong = $('#SongChooser').val();
+      var songlist = $('#chosenSongs');
+      songlist.append("<li>" + chosenSong + "</li>");
+      };
+  </script>
+
   <script> //this will populate the dropdown.
   var dropdowndata = {
     url : "SacredHarpTitleData.json",
@@ -86,7 +92,7 @@ Details for your chosen songs will appear below</p>
     success: function(response){
       var listOptions = "";
       for (var i = 0; i < response.length; i++){
-        listOptions += '<option value="'+ response[i].pageID.toString() +'">' + response[i].pageID.toString() + '<option>';
+        listOptions += '<option value="'+ response[i].pageID.toString() +'">' + response[i].pageID.toString() + '</option>';
         }
       $('#SongChooser').html(listOptions);
 
@@ -97,7 +103,7 @@ $.ajax(dropdowndata);  // Call the above to avoid more work.
 
   <script>
   //This is the script to get all songs to display. it pulls from the data located in this same folder, and will come in handy later.
-  var ajaxcall = {
+  var allsongs = {
     url : "SacredHarpTitleData.json",
     dataType: 'json',
     success: function(response){
@@ -142,14 +148,7 @@ function getSongListData() {
 </script>
 
 
-  <script>
-  function listSongs() {
-      var chosenSong = $('#SongChooser').val();
-      //  console.log(chosenSong); //this was just for testing.
-      var songlist = $('#chosenSongs');
-      songlist.append("<li>" + chosenSong + "</li>");
-      };
-  </script>
+
 
 <!--
 
