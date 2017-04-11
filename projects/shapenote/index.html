@@ -36,7 +36,7 @@ Details for your chosen songs will appear below</p>
 <br />
 <!--Phase 1: the selection of the subset for the mini-index" -->
 
-<select name="select" id="SongChooser">
+<select name="select" id="SongChooser"> <!-- TODO Multiple selection: need to slice selects so they're separate elements -->
 
 </select>
 
@@ -49,7 +49,7 @@ Details for your chosen songs will appear below</p>
   </ul>
 </div>
 <br />
-<button onclick="getSongDetails('178')">Get Details</button>
+<button onclick="getSongListData()">Get Details</button>
 
 <br />
 <div>
@@ -81,7 +81,7 @@ Details for your chosen songs will appear below</p>
   function listSongs() {
       var chosenSong = $('#SongChooser').val();
       var songlist = $('#chosenSongs');
-      songlist.append("<li>" + chosenSong + "</li>");
+      songlist.append("<li class='chosenSong'>" + chosenSong + "</li>");
       };
   </script>
 
@@ -131,7 +131,7 @@ console.log("looking for " + songID)
         if (songID == response[i].pageID.toString()) {
           songDetails +=  '<li>' + response[i].pageID.toString() + ": " + response[i].songTitle.toString() + '</li>';
           console.log(songDetails);
-          $('.songDetails-container').html(songDetails);
+          $('.songDetails-container').append(songDetails);
           }
         }
       }
@@ -142,10 +142,17 @@ $.ajax(ajaxstuff); //this is the actual ajax call, using the params from the var
 </script>
 
 <script>
+
 function getSongListData() {
-  console.log("call getSongData for each item in the list of , after it's working...");
-};
+  $(".chosenSong").each( function( index, element) { //go find each element with class chosenSong
+    getSongDetails( $(this).text() );
+    console.log("This is element: " + $(this).text()); ////run the getSongDetails function on it.
+  });
+ };
+
+
 </script>
+
 
 
 
