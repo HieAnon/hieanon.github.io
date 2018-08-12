@@ -3,21 +3,16 @@ TO-DO LIST
 Content To-Dos
 -homepage
 --add epigraph? ONLY epigraph?
-
-Edit sheep image to small size for lightweight header.
+--how to handle the blank space?
 
 -projects
---finish the CSS-Accordions. Will involve creating code examples (see code/CSS to-dos)
---decide what should be next after css accordions
+--header/footer on project pages? simplified header with a "back to site" option?
 
-header/footer on project pages? simplified header with a "back to site" option?
+-project metadata
+--decide how much info to include about each that's on the project page, and how to style
+--decide if design pieces (ampersand portfolio?) should be included.
 
 
 Code To-Dos
 -Refactor CSS for mobile
-
---style non-navbar links, especially h3
-
--projects
---decide how much info to include about each that's on the project page, and how to style
---decide if design pieces (ampersand portfolio?) should be included.
+--style non-navbar links, especially h3's
